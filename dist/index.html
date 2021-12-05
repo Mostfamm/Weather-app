@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section class="top-banner">
+        <div class="container">
+            <div class="input-div">
+                <input type="text" id="search-input">
+                <button id="search-btn">Search</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <div id="results"></div>
+
+    <script id="cities-template" type="text/x-handlebars">
+        <section class="ajax-section">
+        <div class="container">
+            <ul class="cities">
+        {{#each cities}}
+        <li class="city">
+            <div class="city-info">
+                <h2 class="city-name" >{{name}}</h2>
+                <div class="city-temp">{{temperature}}</div>
+                <figure>
+                    <img class="city-icon" src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png" alt="{{conditionPic}}">
+                    <figcaption>{{condition}}</figcaption>
+                  </figure>
+                </div>
+                  <div class="save-remove-btns">
+                    <button class="save-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button class="remove-btn"><i class="fa fa-trash-o"  aria-hidden="true" ></i></button>
+                </div>
+            </li>
+        
+           
+
+         </div>
+        {{/each}}
+        </div>
+    </ul>
+</section>
+    </script>
+
+
+
+
+
+    <script src="/jQuery/dist/jQuery.js"></script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="renderer.js"></script>
+    <script src="TempManager.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
